@@ -30,10 +30,10 @@ rm(list=ls())
 datum <- read.csv("/Path/To/File/Data for R Analysis.csv")
 
 #Society Topic Data
-SocietyTopics <- read.csv('/Path/To/File/Societal Nodes Coding - Paula/IA_Topics_R_DRAFT.csv', sep=",", header=TRUE)
+SocietyTopics <- read.csv('/Path/To/File/IA_Topics_R_DRAFT.csv', sep=",", header=TRUE)
 
 #Other Category Data
-OtherCategory <- read.csv('/Path/To/File/Societal Nodes Coding - Paula/9_other_R_draft.csv', sep=",", header=TRUE)
+OtherCategory <- read.csv('/Path/To/File/9_other_R_draft.csv', sep=",", header=TRUE)
 ```
 ### Load Libraries 
 ```{r}
