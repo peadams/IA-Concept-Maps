@@ -166,24 +166,21 @@ knitr::kable(Average_numBioNodes_perStudent,format = "html", caption = "Average 
 Average_numSocietyNodes_perStudent <- datum %>% group_by(Section) %>% summarize(average=mean(Societynodes)) %>% data.frame # average
 knitr::kable(Average_numSocietyNodes_perStudent,format = "html", caption = "Average Number of Society Nodes per Concept Map", table.attr = "style='width:20%;'")
 ```
-### Linear model to estimate differences in the number of overall nodes between sections
+### Linear models to estimate differences in the number of nodes between sections
 ```{r}
 overall<-lm(Nodes~Section, data=datum, na.action=na.exclude) 
 summary(overall)
-```
-### Linear model to estimate differences in the number of biology nodes between sections
-```{r}
+
 bionodes<-lm(Bionodes~Section, data=datum, na.action=na.exclude)
 summary(bionodes)
-```
-### Linear model to estimate differences in the number of societal nodes between sections
-```{r}
+
 Societalnodes<-lm(Societynodes~Section, data=datum, na.action=na.exclude)
 summary(Societalnodes)
 ```
 
-# Societal Nodes by Category Code
+## Diferences in number of Societal Topics per student by class Section
 ### Count students per Class
+Used to create percentages
 ```{r}
 FreeStudents <- subset(SocietyTopics,Section=="Traditional")
 FreeStudentsCount <- as.numeric(length(unique(FreeStudents$Initials)))
@@ -196,7 +193,6 @@ Example student with 5 nodes coded 1, 2, 3, 1, 3 would be condensened to a stude
 ```{r}
 SocietyTopics_Condensed <- distinct(SocietyTopics)
 ```
-## Diferences in number of Topics per student by class Section
 ### Create Counts by student
 How many topics did each student say? Average number of topics per student
 ```{r}
@@ -228,7 +224,7 @@ topics_per_student_lm <-lm(TotalperStudent~Section, data=Topic_perStudent, na.ac
 summary(topics_per_student_lm)
 ```
 
-## Differences in frequency of each topic by Class Section
+## Differences in frequency of each societal topic by class section
 ### Create Concept Count Tables
 Count how many students mention each category in both sections (IA vs Free) 
 ```{r}
