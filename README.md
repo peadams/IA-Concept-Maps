@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
 rm(list=ls())
 
 #Node Data
-datum <- read.csv("/Path/To/File/Final Checked Data/Data for R Analysis.csv")
+datum <- read.csv("/Path/To/File/Data for R Analysis.csv")
 
 #Society Topic Data
 SocietyTopics <- read.csv('/Path/To/File/Societal Nodes Coding - Paula/IA_Topics_R_DRAFT.csv', sep=",", header=TRUE)
