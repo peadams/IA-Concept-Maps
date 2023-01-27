@@ -27,13 +27,13 @@ knitr::opts_chunk$set(echo = TRUE)
 rm(list=ls())
 
 #Node Data
-datum <- read.csv("/Users/Owner/Library/CloudStorage/Box-Box/IA Integration_SemesterLong/R analysis/Final Checked Data/Data for R Analysis.csv")
+datum <- read.csv("/Path/To/File/Final Checked Data/Data for R Analysis.csv")
 
 #Society Topic Data
-SocietyTopics <- read.csv('/Users/Owner/Library/CloudStorage/Box-Box/IA Integration_SemesterLong/R analysis/Societal Nodes Coding - Paula/IA_Topics_R_DRAFT.csv', sep=",", header=TRUE)
+SocietyTopics <- read.csv('/Path/To/File/Societal Nodes Coding - Paula/IA_Topics_R_DRAFT.csv', sep=",", header=TRUE)
 
 #Other Category Data
-OtherCategory <- read.csv('/Users/Owner/Library/CloudStorage/Box-Box/IA Integration_SemesterLong/R analysis/Societal Nodes Coding - Paula/9_other_R_draft.csv', sep=",", header=TRUE)
+OtherCategory <- read.csv('/Path/To/File/Societal Nodes Coding - Paula/9_other_R_draft.csv', sep=",", header=TRUE)
 ```
 ### Load Libraries 
 ```{r}
