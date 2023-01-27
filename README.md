@@ -80,7 +80,7 @@ OtherCategory$Category <- as.factor(OtherCategory$Category)
 OtherCategory$Student <- as.factor(OtherCategory$Student)
 ```
 
-# Total Nodes per Student Analyses
+## Total Nodes per Student Analyses
 ### Graph of number of overall nodes - density and boxplot
 ```{r}
 #Density Plot
@@ -285,7 +285,7 @@ Percents_PlotGrid <- plot_grid(title, percents_plot_row,ncol = 1, rel_heights = 
 Percents_PlotGrid
 ```
 
-# Societal Nodes not aligning with Ideological Topics, aka "Other Category"
+## Societal Nodes not aligning with Ideological Topics, aka "Other Category"
 ### Create Condensed Data
 Combine duplicate categories for each student. 
 Example student with 5 nodes coded 1, 2, 3, 1, 3 would be condensened to a student mentioning categories 1, 2, & 3. Useful because some students may have lots of nodes of the same category artifically inflating their societal nodes. However, this does lower the total count of nodes. 
