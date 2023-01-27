@@ -11,12 +11,9 @@ Abstract:
 Project Summary:
 Supplementary Materials:
 
----
-title: "IA Concept Maps Code"
-author: "Paula E. Adams and Emily P. Driessen"
-date: "`r Sys.Date()`"
-output: html_document
----
+
+
+
 
 
 ```{r setup, include=FALSE}
