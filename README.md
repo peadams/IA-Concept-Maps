@@ -1,20 +1,21 @@
 
-#Teaching to expand student inclusion of societal concepts in science 
+# Teaching to expand student inclusion of societal concepts in science 
 
 Paula E. Adams*, Emily Driessen, Enya Granados, Penny Ragland, Jeremiah A. Henning, Abby E. Beatty & Cissy J. Ballen
 
  *Corresponding Author: pea0013@auburn.edu 
 
-Abstract:
+## Abstract:
 ""
 
-Project Summary:
+## Project Summary:
 Supplementary Materials:
 
 
 
 
 
+# Statistical and Data Visualization Code
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -79,6 +80,7 @@ OtherCategory$Category <- as.factor(OtherCategory$Category)
 OtherCategory$Student <- as.factor(OtherCategory$Student)
 ```
 
+# Total Nodes per Student Analyses
 ### Graph of number of overall nodes - density and boxplot
 ```{r}
 #Density Plot
@@ -101,7 +103,6 @@ Nodebox<-ggplot(datum, aes(x=Section, y=Nodes, fill=fct_rev(Section))) +
   scale_x_discrete(name = "") + theme(legend.position="none",axis.title = element_text(size = 9))
 
 ```
-
 ### Graph of number of biology nodes - density and boxplot
 ```{r}
 #Density Plot
@@ -124,7 +125,6 @@ Biologybox<-ggplot(datum, aes(x=Section, y=Bionodes, fill=fct_rev(Section))) +
   scale_x_discrete(name="") +  
   theme(legend.position="none")
 ```
-
 ### Graph of number of society nodes - density and boxplot
 ```{r}
 #Density Plot
@@ -148,15 +148,13 @@ Societybox<-ggplot(datum, aes(x=Section, y=Societynodes, fill=fct_rev(Section)))
   scale_x_discrete(name="") +
   labs(fill='Section')
 ```
-
 ### Combine Node Count Plots
-# plot_grid from the cowplot package
+plot_grid from the cowplot package
 ```{r}
 Combinedgraph <- plot_grid(NodeCount, BionodeCount, SocietyCount, Nodebox, Biologybox, Societybox , ncol=3, labels="AUTO",rel_heights =c(2,3)) #rel_widths = c(2,2, 3)
 
 Combinedgraph
 ```
-
 ### Average number of nodes calculations (total, biology, society)
 ```{r}
 Average_numNodes_perStudent <- datum %>% group_by(Section) %>% summarize(average=mean(Nodes)) %>% data.frame # average
@@ -168,34 +166,23 @@ knitr::kable(Average_numBioNodes_perStudent,format = "html", caption = "Average 
 Average_numSocietyNodes_perStudent <- datum %>% group_by(Section) %>% summarize(average=mean(Societynodes)) %>% data.frame # average
 knitr::kable(Average_numSocietyNodes_perStudent,format = "html", caption = "Average Number of Society Nodes per Concept Map", table.attr = "style='width:20%;'")
 ```
-
 ### Linear model to estimate differences in the number of overall nodes between sections
 ```{r}
 overall<-lm(Nodes~Section, data=datum, na.action=na.exclude) 
-
 summary(overall)
 ```
-
 ### Linear model to estimate differences in the number of biology nodes between sections
 ```{r}
 bionodes<-lm(Bionodes~Section, data=datum, na.action=na.exclude)
-
-bionodes
-
 summary(bionodes)
 ```
-
 ### Linear model to estimate differences in the number of societal nodes between sections
 ```{r}
-Societalnodes<-lm(Societynodes~Section, data=datum, na.action=na.exclude) 
-
-Societalnodes
-
+Societalnodes<-lm(Societynodes~Section, data=datum, na.action=na.exclude)
 summary(Societalnodes)
 ```
 
 # Societal Nodes by Category Code
-
 ### Count students per Class
 ```{r}
 FreeStudents <- subset(SocietyTopics,Section=="Traditional")
@@ -203,14 +190,12 @@ FreeStudentsCount <- as.numeric(length(unique(FreeStudents$Initials)))
 IAStudents <- subset(SocietyTopics,Section=="Ideol. Aware")
 IAStudentsCount <- as.numeric(length(unique(IAStudents$Initials)))
 ```
-
 ### Create Condensed Data
 Combine duplicate categories for each student. 
 Example student with 5 nodes coded 1, 2, 3, 1, 3 would be condensened to a student mentioning categories 1, 2, & 3. Useful because some students may have lots of nodes of the same category artifically inflating their societal nodes. However, this does lower the total count of nodes. 
 ```{r}
 SocietyTopics_Condensed <- distinct(SocietyTopics)
 ```
-
 ## Diferences in number of Topics per student by class Section
 ### Create Counts by student
 How many topics did each student say? Average number of topics per student
@@ -221,7 +206,6 @@ Average_numTopics_perStudent <- Topic_perStudent %>% group_by(Section) %>% summa
 
 knitr::kable(Average_numTopics_perStudent,format = "html", caption = " Average Number of topics per Concept Map by Section", table.attr = "style='width:20%;'")
 ```
-
 ### Boxplot of societal topics per student  
 ```{r}
 Topics_perstudentBox <- ggplot(Topic_perStudent, aes(x=Section, y=TotalperStudent,fill=Section)) + 
@@ -238,13 +222,9 @@ Topics_perstudentBox <- ggplot(Topic_perStudent, aes(x=Section, y=TotalperStuden
 
 Topics_perstudentBox
 ```
-
 ### Linear model to estimate differences in the number of societal Topics per student between sections
 ```{r}
 topics_per_student_lm <-lm(TotalperStudent~Section, data=Topic_perStudent, na.action=na.exclude) 
-
-topics_per_student_lm
-
 summary(topics_per_student_lm)
 ```
 
@@ -254,8 +234,7 @@ Count how many students mention each category in both sections (IA vs Free)
 ```{r}
 Condensed_Counts <- count(SocietyTopics_Condensed,Section,IA.Concept,name="Total",.drop=FALSE)
 ```
-
-Percentage of Students mentioning each topic
+### Percentage of Students mentioning each topic
 ```{r}
 Condensed_Counts_Percents <- mutate(Condensed_Counts, Percent = case_when(Section=="Traditional" ~ 100*(Total/FreeStudentsCount), Section=="Ideol. Aware" ~ 100*(Total/IAStudentsCount))) ## Add percent of students using each IA category to the condensed version of Counts
 
@@ -263,7 +242,6 @@ Percent_Counts <- subset(Condensed_Counts_Percents,select=c(Section,IA.Concept,P
 Percent_Counts2 <-pivot_wider(Percent_Counts, names_from = "Section",values_from = "Percent")
 knitr::kable(Percent_Counts2, caption = "Percent students mentioning each topic") 
 ```
-
 ### Figure for percent of students mentioning each topic at least once (condensed)
 Percents plot grid for paper
 (does not equal 100% because each student can mention multiple topics)
@@ -311,7 +289,6 @@ Percents_PlotGrid <- plot_grid(title, percents_plot_row,ncol = 1, rel_heights = 
 Percents_PlotGrid
 ```
 
-
 # Societal Nodes not aligning with Ideological Topics, aka "Other Category"
 ### Create Condensed Data
 Combine duplicate categories for each student. 
@@ -319,7 +296,6 @@ Example student with 5 nodes coded 1, 2, 3, 1, 3 would be condensened to a stude
 ```{r}
 OtherCategory_Condensed <- distinct(OtherCategory)
 ```
-
 ### Count Mentions per student and convert to percentages
 ```{r}
 condensed_counts <- count(OtherCategory_Condensed,Section,Category,name="Total",.drop=FALSE)
@@ -331,8 +307,6 @@ Percent_Counts <- subset(Condensed_Counts_Percents,select=c(Section,Category,Per
 Percent_Counts2 <-pivot_wider(Percent_Counts, names_from = "Section",values_from = "Percent")
 knitr::kable(Percent_Counts2, caption = "Percent students mentioning each topic") 
 ```
-
-
 ### Graph for Percent of Students mentioning each "Other" societal topic
 ```{r}
 Percent_Counts$Category <- factor(Percent_Counts$Category, levels=c('Distrust in science','Public science experience','Societal factors affecting science','Problems in science','Faulty information about science'),exclude = NULL)
