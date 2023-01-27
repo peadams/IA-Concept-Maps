@@ -265,7 +265,7 @@ knitr::kable(Percent_Counts2, caption = "Percent students mentioning each topic"
 ```
 
 ### Figure for percent of students mentioning each topic at least once (condensed)
-### Percents plot grid for paper
+Percents plot grid for paper
 (does not equal 100% because each student can mention multiple topics)
 ```{r}
 Condensed_Counts_Percents$IA.Concept <- as.character(Condensed_Counts_Percents$IA.Concept)
