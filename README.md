@@ -11,7 +11,7 @@ Paula E. Adams*, Emily Driessen, Enya Granados, Penny Ragland, Jeremiah A. Henni
 ## Project Summary:
 
 ## Supplementary Materials:
-See [https://github.com/aeb0084/Ideological-Awareness-Activities] for Ideological Awareness Activities
+See [Ideological Awareness Activities](https://github.com/aeb0084/Ideological-Awareness-Activities) for more information about the curriculum used in this study
 
 
 
