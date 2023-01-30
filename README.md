@@ -1,5 +1,5 @@
 
-# Teaching to expand student inclusion of societal concepts in science 
+# Embracing the inclusion of societal concepts in science leads to better understandings of their impacts  
 
 Paula E. Adams*, Emily Driessen, Enya Granados, Penny Ragland, Jeremiah A. Henning, Abby E. Beatty & Cissy J. Ballen
 
