@@ -1,12 +1,13 @@
 
-# Embracing the inclusion of societal concepts in science leads to better understandings of their impacts  
+# Embracing the inclusion of societal concepts in biology improves student understanding
 
 Paula E. Adams*, Emily Driessen, Enya Granados, Penny Ragland, Jeremiah A. Henning, Abby E. Beatty & Cissy J. Ballen
 
  *Corresponding Author: pea0013@auburn.edu 
+ https://www.frontiersin.org/articles/10.3389/feduc.2023.1154609/full
 
 ## Abstract:
-""
+"Understanding the relationship between science and society is included as a core competency for biology students in the United States. However, traditional undergraduate biology instruction emphasizes scientific practice and generally avoids potentially controversial issues at the intersection of science and society, such as representation in STEM, historical unethical research experiments, biology of sex and gender, and environmental justice. As calls grow to highlight this core competency, it is critical we investigate the impact of including these topics in undergraduate biology education. Here, we implemented a semester-long ideological awareness curriculum that emphasized biases, stereotypes, and assumptions that have shaped historical and contemporary science. We taught this curriculum to one section of a non-majors introductory biology course and compared the outcomes to a section of the same course taught using traditional biology content (hereafter the ‘traditional’ section) that did not emphasize societal topics. Both sections of students created concept maps for their final exam, which we coded for ‘society’ and ‘biology’ content. We then assessed (1) the amount of societal content included in the concept maps, and (2) which societal topics were mentioned in each section. We found that students in the ideologically aware section included more societal content in their concept maps than the students in the traditional section. Students exposed to the ideological awareness modules often mentioned the topics covered in those modules, whereas students in the traditional section most commonly mentioned faulty scientific information such as pseudoscience or non-credible research, which was emphasized in the first chapter of the required text-book for both sections. Our results show students who were not engaged in activities about ideological awareness in biology had fewer notions of how society impacts science at the end of the semester. These findings highlight the importance of intentionally teaching students the bidirectional impacts of science and society."
 
 ## Project Summary:
 
